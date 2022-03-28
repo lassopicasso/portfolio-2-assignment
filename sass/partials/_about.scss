@@ -1,0 +1,34 @@
+#about {
+  position: relative;
+  max-width: 80%;
+  display: block;
+  align-items: center;
+  margin: auto;
+}
+
+.about__wrapper {
+  @extend %background;
+  padding: 10px 320px 10px 20px;
+  max-width: 58%;
+  &:hover {
+    @extend %background-hover;
+  }
+  .about__text {
+    line-height: 1.4;
+    span {
+      display: block;
+    }
+  }
+}
+
+.about__image {
+  position: absolute;
+  top: 60px;
+  right: 0%;
+  background-image: url(../../images/profile.jpg);
+  width: 400px;
+  height: 380px;
+  background-size: cover;
+  background-position: 50%;
+  border-radius: 10px;
+}

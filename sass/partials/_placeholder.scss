@@ -1,0 +1,8 @@
+%background {
+  border-radius: 10px;
+  background-color: rgba(getColor(background), 0.7);
+  transition: 0.3s;
+}
+%background-hover {
+  background-color: rgba(getColor(background), 0.4);
+}

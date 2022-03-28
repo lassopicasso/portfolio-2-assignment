@@ -1,0 +1,17 @@
+/*Fonts*/
+$font-main: "PT Sans", sans-serif;
+$font-secondary: "Bebas Neue", sans-serif;
+
+/*Colors*/
+$colors: (
+  main: white,
+  link: #02fefe,
+  active: #ff9100,
+  background: #706f6f,
+  button: linear-gradient(#bd2c00, #5f1600),
+  button-hover: linear-gradient(#bd2c00, #bd2c00),
+);
+
+@function getColor($color) {
+  @return map-get($colors, $color);
+}
