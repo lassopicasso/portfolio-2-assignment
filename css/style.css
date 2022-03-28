@@ -55,14 +55,14 @@ section {
   margin-bottom: 70vh !important;
 }
 
-.welcome__social-media, .welcome__typewriter, .about__wrapper {
+.welcome__social-media, .welcome__typewriter, .about__wrapper, #skills, .featured__description {
   border-radius: 10px;
   background-color: rgba(112, 111, 111, 0.7);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.welcome__social-media:hover, .welcome__typewriter:hover, .about__wrapper:hover {
+.welcome__social-media:hover, .welcome__typewriter:hover, .about__wrapper:hover, #skills:hover, .featured__description:hover {
   background-color: rgba(112, 111, 111, 0.4);
 }
 
@@ -239,6 +239,12 @@ footer {
   border-radius: 10px;
 }
 
+#skills {
+  max-width: 600px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
 .skills {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,6 +263,7 @@ footer {
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  font-size: 20px;
 }
 
 .skills__nav-link:hover {
@@ -267,5 +274,81 @@ footer {
 .skills__nav-link--active {
   color: #ff9100;
   border-left: 3px solid #ff9100;
+}
+
+.skills__content {
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.skills__content .keywords-wrapper {
+  list-style: none;
+  padding: 0;
+}
+
+.skills__content .keywords-wrapper li {
+  display: inline;
+  font-weight: bold;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+#projects {
+  max-width: 80%;
+  margin: auto;
+}
+
+.featured__project {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.featured__image-wrapper {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.featured__image {
+  width: 350px;
+  height: 250px;
+  background-size: cover;
+  border-radius: 10px;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.featured__image:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.featured__image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.featured__description {
+  max-width: 700px;
+  margin-left: -80px;
+  z-index: 1;
+  padding: 10px 20px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */

@@ -20,3 +20,43 @@ export const skillsArray = [
     keyword: ["Usability", "UX", "UI"],
   },
 ];
+
+export const featuredArray = [
+  {
+    id: "0",
+    title: "Running Shoes",
+    text: "E-commerce website. Well functioned shopping cart. Where I've used a combo of local storage and Strapi API to make the website run well. Also created an admin login so that products can be added or edited in the website.",
+    image: "../../images/running-shoes.jpg",
+    url: "https://running-shoes.netlify.app",
+  },
+  {
+    id: "1",
+    title: "Blogland",
+    text: "A design that covers nicely the theme of this website. Easy to navigate with sort functions that gives a good usability when searching for content. The website use headless CMS from WordPress.",
+    image: "../../images/blogland.jpg",
+    url: "https://bloglaand.netlify.app",
+  },
+];
+
+// export const projectsArray = [
+//   {
+//     title: "Running Shoes",
+//     theme: "E-commerce",
+//     date: new Date(2022, 02, 06),
+//   },
+//   {
+//     title: "Community Museum",
+//     theme: "Museum",
+//     date: new Date(2021, 01, 28),
+//   },
+//   {
+//     title: "Blogland",
+//     theme: "Blog",
+//     date: new Date(2021, 09, 09),
+//   },
+//   {
+//     title: "Rainy Jackets",
+//     theme: "E-commerce",
+//     date: new Date(2021, 01, 06),
+//   },
+// ];

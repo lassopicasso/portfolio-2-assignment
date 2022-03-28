@@ -1,5 +1,5 @@
 import typeWriter from "./components/typewrite.js";
-import { skillsArray } from "./storage/arrays.js";
+import { skillsArray, featuredArray } from "./storage/arrays.js";
 
 document.addEventListener("DOMContentLoaded", typeWriter);
 
@@ -40,16 +40,27 @@ scrollDistance();
 
 /** Skills - Nav **/
 
-// for (let i = 0; i < skillsArray.length; )
-
 const navSkills = document.querySelectorAll(".skills__nav-link");
 const skillsContent = document.querySelector(".skills__content");
+
+skillsArray.forEach((skill) => {
+  if (skill.title === "JavaScript") {
+    createHTML(skill.title, skill.text, skill.keyword);
+  }
+});
+
 navSkills.forEach((navLink) => {
-  console.log(navLink.dataset.title);
   navLink.addEventListener("click", skill);
 });
 
 function skill(event) {
+  navSkills.forEach((link) => {
+    if (link.classList.contains("skills__nav-link--active")) {
+      link.classList.remove("skills__nav-link--active");
+    }
+  });
+  event.target.classList.add("skills__nav-link--active");
+
   let skillInFocus = event.target.dataset.title;
   skillsContent.innerHTML = "";
   skillsArray.forEach((object) => {
@@ -60,11 +71,39 @@ function skill(event) {
 }
 
 function createHTML(title, description, keywords) {
-  skillsContent.innerHTML = `<h3>${title}</h3>
-                            <p>${description}</p>
-                            <ul class="keywords-wrapper"></ul>`;
+  skillsContent.innerHTML = ` <div>
+                                <h3>${title}</h3>
+                                <p>${description}</p>
+                              </div>
+                              <div>
+                                <ul class="keywords-wrapper"></ul>
+                              </div>`;
   const keywordsWrapper = document.querySelector(".keywords-wrapper");
   keywords.forEach((keyword) => {
     keywordsWrapper.innerHTML += `<li>${keyword}</li>`;
   });
 }
+
+/*Projects*/
+
+/** Projects - Featured **/
+
+featuredArray.forEach((project) => {
+  const featuredProjects = document.querySelector(".featured__projects");
+  featuredProjects.innerHTML += `
+                                <div class="featured__project">
+                                  <div class="featured__image-wrapper">  
+                                    <div class="featured__image featured__image-${project.id}"><a href="${project.url}"></a></div>
+                                  </div>
+                                  <div class="featured__description">
+                                    <h4> ${project.title} </h4>
+                                    <p> ${project.text} </p>
+                                  </div>
+                                </div>
+                                `;
+  console.log(document.querySelector(`.featured__image-${project.id}`));
+  document.querySelector(`.featured__image-${project.id}`).style.backgroundImage = `url("${project.image}")`;
+  console.log(project.title);
+  console.log(project.image);
+  console.log(project.text);
+});
