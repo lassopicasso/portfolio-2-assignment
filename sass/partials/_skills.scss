@@ -22,13 +22,10 @@
     cursor: pointer;
     transition: 0.3s;
     font-size: 20px;
-    &:hover {
-      color: getColor(active);
-      border-left: 3px solid getColor(active);
-    }
+    &:hover,
     &--active {
       color: getColor(active);
-      border-left: 3px solid getColor(active);
+      border-color: getColor(active);
     }
   }
 }
@@ -46,6 +43,33 @@
       font-weight: bold;
       margin-right: 10px;
       text-transform: uppercase;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #skills {
+    max-width: 90%;
+  }
+  .skills {
+    flex-direction: column;
+    &__content {
+      margin: 0;
+    }
+  }
+  .skills__nav {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .skills__nav-link {
+    border-left: none;
+    border-bottom: 3px solid getColor(link);
+    &:hover,
+    &--active {
+      color: getColor(active);
+      border-left: none;
+      border-color: getColor(active);
     }
   }
 }

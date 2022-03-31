@@ -10,6 +10,7 @@ $colors: (
   background: #706f6f,
   button: linear-gradient(#bd2c00, #5f1600),
   button-hover: linear-gradient(#bd2c00, #bd2c00),
+  sortBtn-hover: linear-gradient(#009728, #004c14),
 );
 
 @function getColor($color) {

@@ -15,17 +15,17 @@
         <a href="#logo"> <div class="logo" id="logo">LW</div></a>
         <div class="nav">
           <ul class="nav__list">
-            <li class="nav__link"><a class="nav__link-1" href="#about">01. About</a></li>
-            <li class="nav__link"><a class="nav__link-2" href="#skills">02. Skills</a></li>
-            <li class="nav__link"><a class="nav__link-3" href="#projects">03. Projects</a></li>
-            <li class="nav__link"><a class="nav__link-4" href="#contact">04. Contact</a></li>
+            <li class="nav__link"><a class="nav__link-1 about" href="#about">01. About</a></li>
+            <li class="nav__link"><a class="nav__link-2 skills" href="#skills">02. Skills</a></li>
+            <li class="nav__link"><a class="nav__link-3 projects" href="#projects">03. Projects</a></li>
+            <li class="nav__link"><a class="nav__link-4 contact" href="#contact">04. Contact</a></li>
           </ul>
         </div>
       </div>
     </header>
     <main>
       <section class="welcome">
-        <div class="welcome__social-media">
+        <div class="welcome__social-media social-media">
           <a href="https://github.com/lassopicasso"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/lars-walderhaug-5924a349/"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.facebook.com/lars.walderhaug"><i class="fab fa-facebook-square"></i></a>
@@ -36,22 +36,22 @@
         </div>
         <a class="cta" href="#about">Scroll Down</a>
       </section>
-      <section id="about">
+      <section id="about" class="section-nav section-1">
         <div class="about__wrapper">
           <h2>01. About Me</h2>
+          <div class="about__image-wrapper"><div class="about__image"></div></div>
           <div class="about__text">
             <p>
               When I was a kid my dream was to become a football star, but that didn't happened. Since then I've done other things. Studied Sports Science, Information Technology and got a MBA in finance. Been bartender, UCP assistant and financial controller. After the MBA I studied a year of
               Information Technology to strengthen my tools, and it was when I got my eyes open to Front End Development.
-              <span>It let me build, help people and create functions.</span>
+              <span>It let me build, enjoy people and create functions.</span>
             </p>
-            <p>Now I'm soon done with my 2-year studies as a Front End Developer. Where I've learned the A to Å steps to developing websites. Design, prototype, HTML, CSS vanilla/frameworks (bootstrap, Tailwind) and JavaScript vanilla/frameworks (React and soon more).</p>
+            <p>Now I'm soon done with my 2-year studies in Front end development. Where I've learned the A to Å steps to developing websites. Design, prototype, HTML, CSS vanilla/frameworks (bootstrap, Tailwind) and JavaScript vanilla/frameworks (React and soon more).</p>
           </div>
         </div>
-        <div class="about__image"></div>
       </section>
 
-      <section id="skills">
+      <section id="skills" class="section-nav section-2">
         <h2>02. My Skills</h2>
         <div class="skills">
           <ul class="skills__nav">
@@ -63,15 +63,37 @@
           <div class="skills__content"></div>
         </div>
       </section>
-      <section id="projects">
+      <section id="projects" class="section-nav section-3">
         <h2>03. My Projects</h2>
         <div class="featured">
           <h3>Featured Projects</h3>
           <div class="featured__projects"></div>
         </div>
+        <div class="all-projects">
+          <h3>All Projects</h3>
+          <div class="all-projects__button">
+            <button class="all-projects__sort-btn all-projects__sort-btn--active sort-btn__newest">Newest</button>
+            <button class="all-projects__sort-btn sort-btn__oldest">Oldest</button>
+          </div>
+          <div class="all-projects__wrapper"></div>
+        </div>
+      </section>
+      <section id="contact" class="section-nav section-4">
+        <div class="contact__textbox">
+          <h2>04. Get In Touch</h2>
+          <p>Job, project, or if you just want to say hello, hit the button below to contact me :)</p>
+        </div>
+        <a class="cta" href="mailto:lars.walderhaug@hotmail.com">Contact</a>
       </section>
     </main>
-    <footer>Designed & Build by Lars Walderhaug</footer>
+    <footer>
+      <div class="social-media">
+        <a href="https://github.com/lassopicasso"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/lars-walderhaug-5924a349/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.facebook.com/lars.walderhaug"><i class="fab fa-facebook-square"></i></a>
+      </div>
+      <div>Designed & Build by Lars Walderhaug</div>
+    </footer>
     <script src="js/index.js" type="module"></script>
   </body>
 </html>

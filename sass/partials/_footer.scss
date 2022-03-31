@@ -1,4 +1,7 @@
 footer {
-  margin: 20px;
   text-align: center;
+  margin: 10px;
+  div:nth-child(1) {
+    margin-bottom: 20px;
+  }
 }

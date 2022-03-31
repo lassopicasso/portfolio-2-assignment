@@ -12,12 +12,12 @@
 .featured__image-wrapper {
   overflow: hidden;
   border-radius: 10px;
+  width: 50%;
 }
 .featured__image {
-  width: 350px;
+  max-width: 100%;
   height: 250px;
   background-size: cover;
-  border-radius: 10px;
   background-position: 50%;
   background-repeat: no-repeat;
   transition: 0.3s;
@@ -32,7 +32,7 @@
 }
 
 .featured__description {
-  max-width: 700px;
+  max-width: 70%;
   margin-left: -80px;
   z-index: 1;
   @extend %background;
@@ -40,5 +40,23 @@
   align-self: center;
   &:hover {
     @extend %background-hover;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #projects {
+    max-width: 95%;
+  }
+  .featured__project {
+    flex-direction: column;
+  }
+  .featured__image-wrapper {
+    width: 100%;
+    border-radius: 10px 10px 0px 0px;
+  }
+  .featured__description {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0px 0px 10px 10px;
   }
 }

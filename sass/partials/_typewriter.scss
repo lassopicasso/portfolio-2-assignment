@@ -1,15 +1,11 @@
-.welcome__typewriter {
-  margin: auto;
-  width: 300px;
-  line-height: 2;
-  text-align: center;
-  padding: 10px 20px;
+.welcome__typewriter,
+.contact__textbox {
+  @extend %textbox-small;
   @extend %background;
   &:hover {
     @extend %background-hover;
   }
   p {
     line-height: 2;
-    text-align: center;
   }
 }

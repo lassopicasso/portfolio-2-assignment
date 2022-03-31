@@ -1,40 +1,27 @@
 import typeWriter from "./components/typewrite.js";
-import { skillsArray, featuredArray } from "./storage/arrays.js";
+import { skillsArray, featuredArray, projectsArray } from "./storage/arrays.js";
 
 document.addEventListener("DOMContentLoaded", typeWriter);
 
 /*Scroll distance*/
-let scrollDistance = function (callback, refresh) {
-  // Make sure a valid callback was provided
-  //   if (!callback || typeof callback !== "function") return;
-
-  // Variables
-  var isScrolling, start, end, distance;
-
-  // Listen for scroll events
-  //   window.onscroll
-  window.addEventListener("scroll", function (event) {
-    // Set starting position
-    start = window.pageYOffset;
-    if (750 < start) {
-      document.querySelector(".nav__link-1").style.color = "#ff9100";
-    }
-    if (start > 1550 || start < 750) {
-      document.querySelector(".nav__link-1").style.color = "#02fefe";
-    }
-    if (1700 < start) {
-      document.querySelector(".nav__link-2").style.color = "#ff9100";
-    } else {
-      document.querySelector(".nav__link-2").style.color = "#02fefe";
-    }
-    if (2250 < start) {
-      document.querySelector(".nav__link-3").style.color = "#ff9100";
-    } else {
-      document.querySelector(".nav__link-3").style.color = "#02fefe";
-    }
+(function scrollDistance() {
+  window.addEventListener("scroll", function () {
+    const sections = document.querySelectorAll(".section-nav");
+    sections.forEach((section) => {
+      const sectionDistanceToTop = window.pageYOffset + section.getBoundingClientRect().top;
+      const screenHeight = screen.height;
+      let start = window.pageYOffset;
+      if (parseInt(sectionDistanceToTop) < screenHeight * 0.5 + parseInt(start)) {
+        document.querySelectorAll(".nav__list a").forEach((navLink) => {
+          navLink.classList.remove("active");
+        });
+        document.querySelector(`.${section.id}`).classList.add("active");
+      } else {
+        document.querySelector(`.${section.id}`).classList.remove("active");
+      }
+    });
   });
-};
-scrollDistance();
+})();
 
 /*Skills*/
 
@@ -103,7 +90,60 @@ featuredArray.forEach((project) => {
                                 `;
   console.log(document.querySelector(`.featured__image-${project.id}`));
   document.querySelector(`.featured__image-${project.id}`).style.backgroundImage = `url("${project.image}")`;
-  console.log(project.title);
-  console.log(project.image);
-  console.log(project.text);
 });
+
+/** Sort-button **/
+
+const btns = document.querySelectorAll(".all-projects__sort-btn");
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", sortBtn);
+});
+
+const newestBtn = document.querySelector(".sort-btn__newest");
+sortProjects(newestBtn);
+
+function sortBtn(event) {
+  btns.forEach((btn) => {
+    btn.classList.remove("all-projects__sort-btn--active");
+  });
+  const btn = event.target;
+  btn.classList.add("all-projects__sort-btn--active");
+  sortProjects(btn);
+}
+
+function sortProjects(btn) {
+  let sortedProjects;
+  if (btn.classList.contains("sort-btn__newest")) {
+    sortedProjects = projectsArray.sort(function (a, b) {
+      return new Date(b.date) - new Date(a.date);
+    });
+  } else {
+    sortedProjects = projectsArray.sort(function (a, b) {
+      return new Date(a.date) - new Date(b.date);
+    });
+  }
+  displayProjects(sortedProjects);
+}
+
+function displayProjects(projects) {
+  const projectsContainer = document.querySelector(".all-projects__wrapper");
+
+  projectsContainer.innerHTML = "";
+
+  projects.forEach((project) => {
+    console.log(project.image);
+    let dateFormat = { day: "numeric", month: "numeric", year: "numeric" };
+    let date = new Date(project.date).toLocaleDateString("no-NO", dateFormat);
+    projectsContainer.innerHTML += `
+                              <div class="project" style="background-image: url('${project.image}')">
+                                <a href="${project.url}">
+                                  <div class="project__text">
+                                    <span class="project__title">${project.title}</span>
+                                    <span class="project__date">${date}</span>
+                                  </div>
+                                </a>
+                              </div>
+                              `;
+  });
+}

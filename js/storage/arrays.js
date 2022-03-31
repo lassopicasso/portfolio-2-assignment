@@ -38,25 +38,33 @@ export const featuredArray = [
   },
 ];
 
-// export const projectsArray = [
-//   {
-//     title: "Running Shoes",
-//     theme: "E-commerce",
-//     date: new Date(2022, 02, 06),
-//   },
-//   {
-//     title: "Community Museum",
-//     theme: "Museum",
-//     date: new Date(2021, 01, 28),
-//   },
-//   {
-//     title: "Blogland",
-//     theme: "Blog",
-//     date: new Date(2021, 09, 09),
-//   },
-//   {
-//     title: "Rainy Jackets",
-//     theme: "E-commerce",
-//     date: new Date(2021, 01, 06),
-//   },
-// ];
+export const projectsArray = [
+  {
+    title: "Running Shoes",
+    theme: "E-commerce",
+    date: "2022, 03, 06",
+    image: "../../images/running-shoes.jpg",
+    url: "https://running-shoes.netlify.app",
+  },
+  {
+    title: "Community Museum",
+    theme: "Museum",
+    date: "2021, 02, 28",
+    image: "../../images/museum.jpg",
+    url: "https://communitymuseumm.netlify.app",
+  },
+  {
+    title: "Blogland",
+    theme: "Blog",
+    date: "2021, 10, 09",
+    image: "../../images/blogland.jpg",
+    url: "https://bloglaand.netlify.app",
+  },
+  {
+    title: "RainyDays",
+    theme: "E-commerce",
+    date: "2021, 02, 06",
+    image: "../../images/rainydays.jpg",
+    url: "https://rainydayss.netlify.app",
+  },
+];

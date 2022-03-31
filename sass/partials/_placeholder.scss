@@ -6,3 +6,11 @@
 %background-hover {
   background-color: rgba(getColor(background), 0.4);
 }
+
+%textbox-small {
+  margin: auto;
+  width: 300px;
+  line-height: 2;
+  text-align: center;
+  padding: 10px 20px;
+}
