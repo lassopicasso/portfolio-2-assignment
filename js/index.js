@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", typeWriter);
       const sectionDistanceToTop = window.pageYOffset + section.getBoundingClientRect().top;
       const screenHeight = screen.height;
       let start = window.pageYOffset;
-      if (parseInt(sectionDistanceToTop) < screenHeight * 0.7 + parseInt(start)) {
+      if (parseInt(sectionDistanceToTop) < screenHeight * 0.6 + parseInt(start)) {
         document.querySelectorAll(".nav__list a").forEach((navLink) => {
           navLink.classList.remove("active");
         });
