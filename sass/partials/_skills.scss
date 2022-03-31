@@ -10,11 +10,13 @@
 
 .skills {
   display: flex;
+  position: relative;
 }
 
 .skills__nav {
   list-style: none;
   padding: 0;
+  position: absolute;
   &-link {
     border-left: 3px solid getColor(link);
     padding: 15px 10px;
@@ -26,18 +28,20 @@
     &--active {
       color: getColor(active);
       border-color: getColor(active);
+      padding-left: 20px;
     }
   }
 }
 
 .skills__content {
-  margin-left: 20px;
+  margin-left: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   .keywords-wrapper {
     list-style: none;
     padding: 0;
+    color: getColor(active);
     li {
       display: inline;
       font-weight: bold;
@@ -55,6 +59,7 @@
     flex-direction: column;
     &__content {
       margin: 0;
+      margin-top: 50px;
     }
   }
   .skills__nav {
@@ -70,6 +75,8 @@
       color: getColor(active);
       border-left: none;
       border-color: getColor(active);
+      padding-left: 10px;
+      padding-top: 5px;
     }
   }
 }

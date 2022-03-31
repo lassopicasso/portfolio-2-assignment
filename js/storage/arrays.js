@@ -1,12 +1,12 @@
 export const skillsArray = [
   {
     title: "JavaScript",
-    text: "I master JavaScript vanilla at a fairly high level and can use my analytic skills to create well-functioning solutions for an interact website. Whenever it's convenient I use HTML DOM as much as possible, to make the HTML doc neat. I have some experience to React, and will focus on growing my skills on this in the upcoming months.",
+    text: "I master JavaScript vanilla at a fairly high level and can use my analytic skills to create well-functioning solutions for an interactive website. Whenever it's convenient I use HTML DOM to make the HTML doc as neat as possible. I have some experience to React, and will focus on strenghten these skills in the upcoming months.",
     keyword: ["React", "HTML DOM"],
   },
   {
     title: "HTML",
-    text: "Creating semantic HTML is always my upper goal. Where I am consistent in the use of BEM-classes. ",
+    text: "Since I was a child, when I build my Lego worlds, I have always liked the idea of building stuff. With HTML I have the opportunity to create cool semantic constructions with nice use of BEM-classes.",
     keyword: ["Semantic", "BEM-classes"],
   },
   {

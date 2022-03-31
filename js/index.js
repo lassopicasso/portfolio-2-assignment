@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", typeWriter);
       const sectionDistanceToTop = window.pageYOffset + section.getBoundingClientRect().top;
       const screenHeight = screen.height;
       let start = window.pageYOffset;
-      if (parseInt(sectionDistanceToTop) < screenHeight * 0.5 + parseInt(start)) {
+      if (parseInt(sectionDistanceToTop) < screenHeight * 0.7 + parseInt(start)) {
         document.querySelectorAll(".nav__list a").forEach((navLink) => {
           navLink.classList.remove("active");
         });
@@ -63,6 +63,7 @@ function createHTML(title, description, keywords) {
                                 <p>${description}</p>
                               </div>
                               <div>
+                                <span> Keywords </span>
                                 <ul class="keywords-wrapper"></ul>
                               </div>`;
   const keywordsWrapper = document.querySelector(".keywords-wrapper");
