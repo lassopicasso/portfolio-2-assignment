@@ -26,14 +26,14 @@ export const featuredArray = [
     id: "0",
     title: "Running Shoes",
     text: "E-commerce website. Well functioned shopping cart. Where I've used a combo of local storage and Strapi API to make the website run well. Also created an admin login so that products can be added or edited in the website.",
-    image: "../../images/running-shoes.jpg",
+    image: "../../images/runningshoes.jpg",
     url: "https://running-shoes.netlify.app",
   },
   {
     id: "1",
     title: "Blogland",
     text: "A design that covers nicely the theme of this website. Easy to navigate with sort functions that gives a good usability when searching for content. The website use headless CMS from WordPress.",
-    image: "../../images/blogland.jpg",
+    image: "../../images/blog.jpg",
     url: "https://bloglaand.netlify.app",
   },
 ];
@@ -43,7 +43,7 @@ export const projectsArray = [
     title: "Running Shoes",
     theme: "E-commerce",
     date: "2022, 03, 06",
-    image: "../../images/running-shoes.jpg",
+    image: "../../images/runningshoes.jpg",
     url: "https://running-shoes.netlify.app",
   },
   {
@@ -57,7 +57,7 @@ export const projectsArray = [
     title: "Blogland",
     theme: "Blog",
     date: "2021, 10, 09",
-    image: "../../images/blogland.jpg",
+    image: "../../images/blog.jpg",
     url: "https://bloglaand.netlify.app",
   },
   {

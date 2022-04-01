@@ -3,9 +3,13 @@
   margin: auto;
   @extend %background;
   padding: 10px 20px;
+  @extend %section-hide;
   &:hover {
     @extend %background-hover;
   }
+}
+#skills.visible {
+  @extend %section-display;
 }
 
 .skills {
@@ -53,7 +57,7 @@
 
 @media only screen and (max-width: 800px) {
   #skills {
-    max-width: 90%;
+    max-width: 100%;
   }
   .skills {
     flex-direction: column;
@@ -79,4 +83,8 @@
       padding-top: 5px;
     }
   }
+}
+
+.keywords {
+  font-weight: bold;
 }

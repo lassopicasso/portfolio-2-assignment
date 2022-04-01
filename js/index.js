@@ -1,6 +1,8 @@
 import typeWriter from "./components/typewrite.js";
 import { skillsArray, featuredArray, projectsArray } from "./storage/arrays.js";
+import { navMenu } from "./components/menu.js";
 
+navMenu();
 document.addEventListener("DOMContentLoaded", typeWriter);
 
 /*Scroll distance*/
@@ -16,6 +18,7 @@ document.addEventListener("DOMContentLoaded", typeWriter);
           navLink.classList.remove("active");
         });
         document.querySelector(`.${section.id}`).classList.add("active");
+        document.querySelector(`#${section.id}`).classList.add("visible");
       } else {
         document.querySelector(`.${section.id}`).classList.remove("active");
       }
@@ -63,7 +66,7 @@ function createHTML(title, description, keywords) {
                                 <p>${description}</p>
                               </div>
                               <div>
-                                <span> Keywords </span>
+                                <span class="keywords"> Keywords </span>
                                 <ul class="keywords-wrapper"></ul>
                               </div>`;
   const keywordsWrapper = document.querySelector(".keywords-wrapper");
@@ -84,7 +87,7 @@ featuredArray.forEach((project) => {
                                     <div class="featured__image featured__image-${project.id}"><a href="${project.url}"></a></div>
                                   </div>
                                   <div class="featured__description">
-                                    <h4> ${project.title} </h4>
+                                    <h3> ${project.title} </h3>
                                     <p> ${project.text} </p>
                                   </div>
                                 </div>

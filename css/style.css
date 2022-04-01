@@ -67,6 +67,26 @@ section:not(#contact) {
   scroll-margin-top: 150px;
 }
 
+.welcome {
+  height: 100vh;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    width: 95vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    scroll-margin-top: 0px;
+  }
+}
+
 .social-media, .welcome__typewriter,
 .contact__textbox, .about__wrapper, #skills, .featured__description {
   border-radius: 10px;
@@ -83,33 +103,47 @@ section:not(#contact) {
 .welcome__typewriter,
 .contact__textbox {
   margin: auto;
-  width: 300px;
+  max-width: 300px;
   line-height: 2;
   text-align: center;
   padding: 10px 20px;
 }
 
+#contact, #about, #skills, #projects {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 900ms ease-out, visibility 900ms ease-out;
+  transition: opacity 900ms ease-out, visibility 900ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+
+#contact.visible, #about.visible, #skills.visible, #projects.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 header {
-  margin: 20px auto;
   color: #02fefe;
-  max-width: 1200px;
+  width: 100%;
   font-family: "Bebas Neue", sans-serif;
   text-align: center;
   z-index: 5;
+  background-color: rgba(112, 111, 111, 0.2);
+  height: 85px;
+  position: fixed;
+  margin-bottom: 20px;
 }
 
 .header__container {
-  margin: 0;
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
+  width: 80vw;
+  max-width: 1300px;
+  margin: 10px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80vw;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: fixed;
   left: 10%;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -126,10 +160,12 @@ header {
       align-self: center;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .logo:hover {
   border-color: #ff9100;
+  color: #ff9100;
 }
 
 .nav__list {
@@ -149,10 +185,67 @@ header {
   display: block;
   width: 100%;
   height: 100%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .nav__link a:hover {
   color: #ff9100 !important;
+}
+
+.menu {
+  display: none;
+}
+
+.menu .fa-bars {
+  cursor: pointer;
+}
+
+.menu__dropdown {
+  font-size: 22px;
+  display: none;
+  list-style: none;
+  padding-left: 0px;
+  text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    -webkit-transition: top 0.3s;
+    transition: top 0.3s;
+    background-color: rgba(112, 111, 111, 0.8);
+  }
+  .header__container {
+    margin-top: 15px;
+  }
+  .nav__list {
+    display: none;
+  }
+  .menu {
+    display: block;
+  }
+  .menu i {
+    font-size: 32px;
+  }
+  .menu i:hover {
+    color: #ff9100;
+  }
+  .menu__dropdown {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 62.5px;
+    background-color: rgba(112, 111, 111, 0.8);
+  }
+  .menu__dropdown a {
+    padding-left: 40px;
+    padding-top: 10px;
+    width: 100%;
+    display: block;
+  }
+  .menu__dropdown a:last-child {
+    padding-bottom: 10px;
+  }
 }
 
 footer {
@@ -294,7 +387,7 @@ footer div:nth-child(1) {
 
 @media only screen and (max-width: 800px) {
   #about {
-    max-width: 95%;
+    max-width: 100%;
   }
   .about__image-wrapper {
     position: static;
@@ -377,7 +470,7 @@ footer div:nth-child(1) {
 
 @media only screen and (max-width: 800px) {
   #skills {
-    max-width: 90%;
+    max-width: 100%;
   }
   .skills {
     -webkit-box-orient: vertical;
@@ -411,9 +504,17 @@ footer div:nth-child(1) {
   }
 }
 
+.keywords {
+  font-weight: bold;
+}
+
 #projects {
   max-width: 80%;
   margin: auto;
+}
+
+#projects h3 {
+  margin-top: 40px;
 }
 
 .featured__project {
@@ -461,9 +562,13 @@ footer div:nth-child(1) {
       align-self: center;
 }
 
+.featured__description h3 {
+  margin-top: 10px !important;
+}
+
 @media only screen and (max-width: 800px) {
   #projects {
-    max-width: 95%;
+    max-width: 100%;
   }
   .featured__project {
     -webkit-box-orient: vertical;
@@ -474,6 +579,7 @@ footer div:nth-child(1) {
   .featured__image-wrapper {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
+    border-bottom: 3px solid;
   }
   .featured__description {
     max-width: 100%;
@@ -493,8 +599,8 @@ footer div:nth-child(1) {
 }
 
 .all-projects__wrapper .project {
-  background-size: cover;
-  background-position: 50% !important;
+  background-size: cover !important;
+  background-position: 50% 0% !important;
   height: 280px;
   width: 100%;
   position: relative;
@@ -514,8 +620,7 @@ footer div:nth-child(1) {
   border-radius: 10px;
 }
 
-.all-projects__wrapper .project a .project__title,
-.all-projects__wrapper .project a .project__date {
+.all-projects__wrapper .project a span {
   -webkit-transition: 0.6s ease-in;
   transition: 0.6s ease-in;
   color: #ff9100;
@@ -525,17 +630,20 @@ footer div:nth-child(1) {
   opacity: 0;
 }
 
-.all-projects__wrapper .project a:hover .project__text, .all-projects__wrapper .project a:hover {
+.all-projects__wrapper .project a:hover .project__text,
+.all-projects__wrapper .project a:hover .project__date, .all-projects__wrapper .project a:hover {
   background-color: rgba(112, 111, 111, 0.6);
   opacity: 1;
   color: #ff9100 !important;
 }
 
 .all-projects__wrapper .project a:hover .project__text .project__title,
-.all-projects__wrapper .project a:hover .project__text .project__date, .all-projects__wrapper .project a:hover .project__title,
+.all-projects__wrapper .project a:hover .project__text .project__date,
+.all-projects__wrapper .project a:hover .project__date .project__title,
+.all-projects__wrapper .project a:hover .project__date .project__date, .all-projects__wrapper .project a:hover .project__title,
 .all-projects__wrapper .project a:hover .project__date {
-  -webkit-transform: scale(1.3) !important;
-          transform: scale(1.3) !important;
+  -webkit-transform: scale(1.1) !important;
+          transform: scale(1.1) !important;
 }
 
 .all-projects__wrapper .project__text {
@@ -561,6 +669,7 @@ footer div:nth-child(1) {
 
 .all-projects__wrapper .project__date {
   font-weight: bold;
+  background: none !important;
 }
 
 @media only screen and (max-width: 1000px) {

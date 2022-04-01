@@ -55,10 +55,37 @@ section:not(#contact) {
   margin-bottom: 70vh !important;
 }
 
+#contact {
+  @extend %section-hide;
+}
+#contact.visible {
+  @extend %section-display;
+}
+
 // /***When using nav to scroll down to the section, the section will be 150px below top of window***/
 #about,
 #skills,
 #projects,
 #contact {
   scroll-margin-top: 150px;
+}
+
+.welcome {
+  height: 100vh;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    width: 95vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    scroll-margin-top: 0px;
+  }
 }

@@ -1,6 +1,14 @@
 #projects {
   max-width: 80%;
   margin: auto;
+  @extend %section-hide;
+  h3 {
+    margin-top: 40px;
+  }
+}
+
+#projects.visible {
+  @extend %section-display;
 }
 
 .featured__project {
@@ -41,11 +49,14 @@
   &:hover {
     @extend %background-hover;
   }
+  h3 {
+    margin-top: 10px !important;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   #projects {
-    max-width: 95%;
+    max-width: 100%;
   }
   .featured__project {
     flex-direction: column;
@@ -53,6 +64,7 @@
   .featured__image-wrapper {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
+    border-bottom: 3px solid getColor(white);
   }
   .featured__description {
     max-width: 100%;
