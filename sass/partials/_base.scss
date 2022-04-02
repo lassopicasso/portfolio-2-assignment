@@ -60,6 +60,9 @@ section:not(#contact) {
 
 #contact {
   @extend %section-hide;
+  p {
+    margin-top: 0px;
+  }
 }
 #contact.visible {
   @extend %section-display;
