@@ -16,11 +16,13 @@ document.addEventListener("DOMContentLoaded", typeWriter);
       if (parseInt(sectionDistanceToTop) < screenHeight * 0.6 + parseInt(start)) {
         document.querySelectorAll(".nav__list a").forEach((navLink) => {
           navLink.classList.remove("active");
+          document.querySelector(`#${section.id}`).classList.remove("visible");
         });
         document.querySelector(`.${section.id}`).classList.add("active");
         document.querySelector(`#${section.id}`).classList.add("visible");
       } else {
         document.querySelector(`.${section.id}`).classList.remove("active");
+        document.querySelector(`#${section.id}`).classList.remove("visible");
       }
     });
   });

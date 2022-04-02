@@ -5,6 +5,7 @@
   margin: 50px auto;
   text-align: center;
   width: 150px;
+  height: 23px;
   border-radius: 5px;
   font-family: $font-secondary;
   color: getColor(main);
@@ -14,6 +15,10 @@
     background: getColor(button-hover);
     box-shadow: none;
   }
+}
+
+.welcome__cta {
+  margin-bottom: 0px;
 }
 
 .all-projects__sort-btn {

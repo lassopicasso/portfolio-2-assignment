@@ -42,7 +42,7 @@ a {
 h1 {
   max-width: 380px;
   text-align: center;
-  margin: 70px auto;
+  margin: 0px auto 20px auto;
 }
 
 h2 {
@@ -52,7 +52,10 @@ h2 {
 /*Blocks*/
 
 section:not(#contact) {
-  margin-bottom: 70vh !important;
+  margin-bottom: 50vh !important;
+}
+.welcome {
+  margin-top: 10px !important;
 }
 
 #contact {
@@ -71,8 +74,11 @@ section:not(#contact) {
 }
 
 .welcome {
-  height: 100vh;
+  height: 78vh;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media only screen and (max-width: 800px) {

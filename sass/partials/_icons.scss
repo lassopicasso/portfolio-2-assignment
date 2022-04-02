@@ -2,6 +2,7 @@
   display: block;
   width: 150px;
   margin: auto;
+  margin-top: 0px;
   text-align: center;
   padding: 5px 20px;
   @extend %background;
@@ -13,6 +14,9 @@
     margin: 5px;
     transition: 0.3s;
   }
+}
+.welcome__social-media {
+  margin-bottom: 100px;
 }
 
 /*Icon Colors */
