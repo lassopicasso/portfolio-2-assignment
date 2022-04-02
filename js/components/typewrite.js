@@ -8,18 +8,51 @@ export default function typeWriter() {
   let welcomeMessage = document.querySelector(".welcome__typewriter p");
   function typeWriter() {
     if (i < txt.length) {
-      if (txt.charAt(i) === "?") {
-        welcomeMessage.innerHTML += `${about}`;
-        i = i + about.length + 1;
-      } else if (txt.charAt(i) === "+") {
-        welcomeMessage.innerHTML += `${projects}`;
-        i = i + projects.length + 1;
+      if (i < 4) {
+        if (txt.charAt(i) === "?") {
+          welcomeMessage.innerHTML += `${about}`;
+          i = i + about.length + 1;
+        } else if (txt.charAt(i) === "+") {
+          welcomeMessage.innerHTML += `${projects}`;
+          i = i + projects.length + 1;
+        } else {
+          welcomeMessage.innerHTML += txt.charAt(i);
+          i++;
+        }
+
+        setTimeout(typeWriter, 500);
+      } else if (i < 48) {
+        if (txt.charAt(i) === "?") {
+          welcomeMessage.innerHTML += `${about}`;
+          i = i + about.length + 1;
+        } else if (txt.charAt(i) === "+") {
+          welcomeMessage.innerHTML += `${projects}`;
+          i = i + projects.length + 1;
+        } else {
+          welcomeMessage.innerHTML += txt.charAt(i);
+          i++;
+        }
+
+        setTimeout(typeWriter, speed);
       } else {
-        welcomeMessage.innerHTML += txt.charAt(i);
-        i++;
+        setTimeout(typeWriterMore, 600);
       }
 
-      setTimeout(typeWriter, speed);
+      function typeWriterMore() {
+        console.log("gggg");
+        if (txt.charAt(i) === "?") {
+          welcomeMessage.innerHTML += `${about}`;
+          i = i + about.length + 1;
+        } else if (txt.charAt(i) === "+") {
+          welcomeMessage.innerHTML += `${projects}`;
+          i = i + projects.length + 1;
+        } else {
+          console.log("titi");
+          welcomeMessage.innerHTML += txt.charAt(i);
+          i++;
+        }
+        setTimeout(typeWriterMore, speed);
+      }
     }
   }
   typeWriter();
