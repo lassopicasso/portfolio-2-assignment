@@ -2,6 +2,7 @@ import typeWriter from "./components/typewrite.js";
 import { skillsArray, featuredArray, projectsArray } from "./storage/arrays.js";
 import { navMenu } from "./components/menu.js";
 import scrollEffects from "./components/scroll.js";
+import { displaySkills, displayFeatured, displayProjects } from "./components/createhtml.js";
 
 navMenu();
 scrollEffects();
@@ -9,14 +10,12 @@ document.addEventListener("DOMContentLoaded", typeWriter);
 
 /*Skills*/
 
-/** Skills - Nav **/
-
 const navSkills = document.querySelectorAll(".skills__nav-link");
 const skillsContent = document.querySelector(".skills__content");
 
 skillsArray.forEach((skill) => {
   if (skill.title === "JavaScript") {
-    createHTML(skill.title, skill.text, skill.keyword);
+    displaySkills(skill.title, skill.text, skill.keyword);
   }
 });
 
@@ -36,23 +35,8 @@ function skill(event) {
   skillsContent.innerHTML = "";
   skillsArray.forEach((object) => {
     if (skillInFocus === object.title) {
-      createHTML(object.title, object.text, object.keyword);
+      displaySkills(object.title, object.text, object.keyword);
     }
-  });
-}
-
-function createHTML(title, description, keywords) {
-  skillsContent.innerHTML = ` <div>
-                                <h3>${title}</h3>
-                                <p>${description}</p>
-                              </div>
-                              <div>
-                                <span class="keywords"> Keywords </span>
-                                <ul class="keywords-wrapper"></ul>
-                              </div>`;
-  const keywordsWrapper = document.querySelector(".keywords-wrapper");
-  keywords.forEach((keyword) => {
-    keywordsWrapper.innerHTML += `<li>${keyword}</li>`;
   });
 }
 
@@ -62,19 +46,7 @@ function createHTML(title, description, keywords) {
 
 featuredArray.forEach((project) => {
   const featuredProjects = document.querySelector(".featured__projects");
-  featuredProjects.innerHTML += `
-                                <div class="featured__project">
-                                  <div class="featured__image-wrapper">  
-                                    <div class="featured__image featured__image-${project.id}"><a href="${project.url}"></a></div>
-                                  </div>
-                                  <div class="featured__description">
-                                    <h3> ${project.title} </h3>
-                                    <p> ${project.text} </p>
-                                  </div>
-                                </div>
-                                `;
-  console.log(document.querySelector(`.featured__image-${project.id}`));
-  document.querySelector(`.featured__image-${project.id}`).style.backgroundImage = `url("${project.image}")`;
+  displayFeatured(featuredProjects, project);
 });
 
 /** Sort-button **/
@@ -108,27 +80,13 @@ function sortProjects(btn) {
       return new Date(a.date) - new Date(b.date);
     });
   }
-  displayProjects(sortedProjects);
+  createProjects(sortedProjects);
 }
 
-function displayProjects(projects) {
+function createProjects(projects) {
   const projectsContainer = document.querySelector(".all-projects__wrapper");
-
   projectsContainer.innerHTML = "";
-
   projects.forEach((project) => {
-    console.log(project.image);
-    let dateFormat = { day: "numeric", month: "numeric", year: "numeric" };
-    let date = new Date(project.date).toLocaleDateString("no-NO", dateFormat);
-    projectsContainer.innerHTML += `
-                              <div class="project" style="background-image: url('${project.image}')">
-                                <a href="${project.url}">
-                                  <div class="project__text">
-                                    <span class="project__title">${project.title}</span>
-                                    <span class="project__date">${date}</span>
-                                  </div>
-                                </a>
-                              </div>
-                              `;
+    displayProjects(projectsContainer, project);
   });
 }
