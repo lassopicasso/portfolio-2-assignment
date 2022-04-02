@@ -64,8 +64,12 @@ section:not(#contact) {
   margin-top: 10px !important;
 }
 
+#contact h2 {
+  margin: 0px;
+}
+
 #contact p {
-  margin-top: 0px;
+  margin: 0px;
 }
 
 #about,
