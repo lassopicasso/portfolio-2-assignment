@@ -8,38 +8,21 @@ export default function typeWriter() {
   let welcomeMessage = document.querySelector(".welcome__typewriter p");
   function typeWriter() {
     if (i < txt.length) {
-      if (i < 4) {
-        if (txt.charAt(i) === "?") {
-          welcomeMessage.innerHTML += `${about}`;
-          i = i + about.length + 1;
-        } else if (txt.charAt(i) === "+") {
-          welcomeMessage.innerHTML += `${projects}`;
-          i = i + projects.length + 1;
-        } else {
-          welcomeMessage.innerHTML += txt.charAt(i);
-          i++;
-        }
-
-        setTimeout(typeWriter, 500);
+      if (i === 3) {
+        textChecker();
+        setTimeout(typeWriter, 800);
       } else if (i < 48) {
-        if (txt.charAt(i) === "?") {
-          welcomeMessage.innerHTML += `${about}`;
-          i = i + about.length + 1;
-        } else if (txt.charAt(i) === "+") {
-          welcomeMessage.innerHTML += `${projects}`;
-          i = i + projects.length + 1;
-        } else {
-          welcomeMessage.innerHTML += txt.charAt(i);
-          i++;
-        }
-
+        textChecker();
         setTimeout(typeWriter, speed);
+      } else if (i === 48) {
+        textChecker();
+        setTimeout(typeWriter, 800);
       } else {
-        setTimeout(typeWriterMore, 600);
+        textChecker();
+        setTimeout(typeWriter, speed);
       }
 
-      function typeWriterMore() {
-        console.log("gggg");
+      function textChecker() {
         if (txt.charAt(i) === "?") {
           welcomeMessage.innerHTML += `${about}`;
           i = i + about.length + 1;
@@ -47,11 +30,9 @@ export default function typeWriter() {
           welcomeMessage.innerHTML += `${projects}`;
           i = i + projects.length + 1;
         } else {
-          console.log("titi");
           welcomeMessage.innerHTML += txt.charAt(i);
           i++;
         }
-        setTimeout(typeWriterMore, speed);
       }
     }
   }
