@@ -21,18 +21,60 @@
   margin-bottom: 0px;
 }
 
+.all-projects__button {
+  display: flex;
+  justify-content: space-between;
+  h4 {
+    margin: 0;
+  }
+}
+
 .all-projects__sort-btn {
+  color: getColor(main);
+  transition: 0.3s !important;
+}
+.all-projects__sort-btn,
+select {
   font-family: $font-secondary;
   font-size: 20px;
-  color: getColor(main);
-  border: none;
   background-image: getColor(button);
+  border: none;
   padding: 5px 15px;
-  transition: 0.3s !important;
-  margin-right: 5px;
-  cursor: pointer;
   &--active,
   &:hover {
     background-image: getColor(sortBtn-hover);
+  }
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+select {
+  background: grey;
+}
+
+.project-types,
+.sort-btns {
+  display: flex;
+}
+
+@media only screen and(max-width: 500px ) {
+  .all-projects__button {
+    flex-direction: column;
+  }
+  .project-types {
+    gap: 10px;
+    div {
+      flex: 1;
+      select {
+        width: 100%;
+      }
+    }
+  }
+  .sort-btns {
+    gap: 10px;
+    button {
+      flex: 1;
+      margin-right: 0px;
+    }
   }
 }

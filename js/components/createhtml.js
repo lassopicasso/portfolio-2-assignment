@@ -38,6 +38,11 @@ export function displayProjects(projectsContainer, project) {
                                   <div class="project__text">
                                     <span class="project__title">${project.title}</span>
                                     <span class="project__date">${date}</span>
+                                  
+                                    <div class="project__text-attributes">
+                                      <div class="project__attributes">JS: ${project.javascript}</div>
+                                      <div class="project__attributes">CSS: ${project.css}</div>
+                                    </div>
                                   </div>
                                 </a>
                               </div>

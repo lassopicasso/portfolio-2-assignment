@@ -52,6 +52,24 @@ featuredArray.forEach((project) => {
 /** Sort-button **/
 
 const btns = document.querySelectorAll(".all-projects__sort-btn");
+const filtersJS = document.querySelectorAll(".filter-js");
+const filtersCSS = document.querySelectorAll(".filter-css");
+
+let filteredJS = "all";
+let filteredCSS = "all";
+
+filtersJS.forEach((filter) => {
+  filter.addEventListener("change", (event) => {
+    filteredJS = event.target.value;
+    sortProjects();
+  });
+});
+filtersCSS.forEach((filter) => {
+  filter.addEventListener("change", (event) => {
+    filteredCSS = event.target.value;
+    sortProjects();
+  });
+});
 
 btns.forEach((btn) => {
   btn.addEventListener("click", sortBtn);
@@ -66,22 +84,46 @@ function sortBtn(event) {
   });
   const btn = event.target;
   btn.classList.add("all-projects__sort-btn--active");
-  sortProjects(btn);
+  sortProjects();
 }
 
-function sortProjects(btn) {
+function sortProjects() {
   let sortedProjects;
-  if (btn.classList.contains("sort-btn__newest")) {
-    sortedProjects = projectsArray.sort(function (a, b) {
-      return new Date(b.date) - new Date(a.date);
-    });
-  } else {
-    sortedProjects = projectsArray.sort(function (a, b) {
-      return new Date(a.date) - new Date(b.date);
-    });
-  }
-  createProjects(sortedProjects);
+  btns.forEach((btn) => {
+    if (btn.classList.contains("all-projects__sort-btn--active")) {
+      console.log(btn);
+      if (btn.classList.contains("sort-btn__newest")) {
+        sortedProjects = projectsArray.sort(function (a, b) {
+          return new Date(b.date) - new Date(a.date);
+        });
+      } else {
+        sortedProjects = projectsArray.sort(function (a, b) {
+          return new Date(a.date) - new Date(b.date);
+        });
+      }
+    }
+  });
+
+  let filteredProjects = sortedProjects.filter((project) => {
+    return (project.css.toLowerCase() === filteredCSS || filteredCSS === "all") && (project.javascript.toLowerCase() === filteredJS || filteredJS === "all");
+  });
+  console.log(filteredProjects);
+  createProjects(filteredProjects);
 }
+
+// function sortProjects(btn) {
+//   let sortedProjects;
+//   if (btn.classList.contains("sort-btn__newest")) {
+//     sortedProjects = projectsArray.sort(function (a, b) {
+//       return new Date(b.date) - new Date(a.date);
+//     });
+//   } else {
+//     sortedProjects = projectsArray.sort(function (a, b) {
+//       return new Date(a.date) - new Date(b.date);
+//     });
+//   }
+//   createProjects(sortedProjects);
+// }
 
 function createProjects(projects) {
   const projectsContainer = document.querySelector(".all-projects__wrapper");

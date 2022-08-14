@@ -12,7 +12,7 @@ export const skillsArray = [
   {
     title: "CSS",
     text: "Lately I have gained good experience using sass in my projects. This simplifies the work in css, and makes the scripts more neat. In smaller projects I have gained some experience using the frameworks Bootstrap and Tailwind. I will focus to gain more experience on these frameworks in further projects.",
-    keyword: ["SASS", "Bootstrap", "Tailwind"],
+    keyword: ["SCSS", "Bootstrap", "Tailwind"],
   },
   {
     title: "Design",
@@ -22,29 +22,47 @@ export const skillsArray = [
 ];
 
 export const featuredArray = [
+  // {
+  //   id: "0",
+  //   title: "Running Shoes",
+  //   text: "E-commerce website. Well functioned shopping cart. Where I've used a combo of local storage and Strapi API to make the website run well. Also created an admin login so that products can be added or edited in the website.",
+  //   image: "../../images/runningshoes.jpg",
+  //   url: "https://running-shoes.netlify.app",
+  // },
   {
     id: "0",
-    title: "Running Shoes",
-    text: "E-commerce website. Well functioned shopping cart. Where I've used a combo of local storage and Strapi API to make the website run well. Also created an admin login so that products can be added or edited in the website.",
-    image: "../../images/runningshoes.jpg",
-    url: "https://running-shoes.netlify.app",
-  },
-  {
-    id: "1",
     title: "Blogland",
     text: "A design that covers nicely the theme of this website. Easy to navigate with sort functions that gives a good usability when searching for content. The website use headless CMS from WordPress.",
     image: "../../images/blog.jpg",
     url: "https://bloglaand.netlify.app",
   },
+  {
+    id: "1",
+    title: "Weatherish",
+    text: "My first bigger React Project. Weather forecast which includes current weather info, 24 hours chart, 8 days interactive forecast and a favorite page with your chosen places. Much work laid down on handle the data from API by using React.",
+    image: "../../images/weatherforecast.jpg",
+    url: "https://forecastsweather.netlify.app/",
+  },
 ];
 
 export const projectsArray = [
+  {
+    title: "Weather Forecast",
+    theme: "Weather service",
+    date: "2022, 07, 30",
+    image: "../../images/weatherforecast.jpg",
+    url: "https://forecastsweather.netlify.app",
+    javascript: "React",
+    css: "Bootstrap",
+  },
   {
     title: "Running Shoes",
     theme: "E-commerce",
     date: "2022, 03, 06",
     image: "../../images/runningshoes.jpg",
     url: "https://running-shoes.netlify.app",
+    javascript: "Vanilla",
+    css: "Scss",
   },
   {
     title: "Community Museum",
@@ -52,6 +70,8 @@ export const projectsArray = [
     date: "2021, 02, 28",
     image: "../../images/museum.jpg",
     url: "https://communitymuseumm.netlify.app",
+    javascript: "Vanilla",
+    css: "Vanilla",
   },
   {
     title: "Blogland",
@@ -59,6 +79,8 @@ export const projectsArray = [
     date: "2021, 10, 09",
     image: "../../images/blog.jpg",
     url: "https://bloglaand.netlify.app",
+    javascript: "Vanilla",
+    css: "Vanilla",
   },
   {
     title: "RainyDays",
@@ -66,5 +88,7 @@ export const projectsArray = [
     date: "2021, 02, 06",
     image: "../../images/rainydays.jpg",
     url: "https://rainydayss.netlify.app",
+    javascript: "Vanilla",
+    css: "Vanilla",
   },
 ];

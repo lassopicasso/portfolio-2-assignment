@@ -64,6 +64,12 @@
       font-weight: bold;
       background: none !important;
     }
+    &__text-attributes {
+      margin-top: 5px;
+      div {
+        text-align: center;
+      }
+    }
   }
 }
 

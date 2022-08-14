@@ -81,8 +81,33 @@
         <div class="all-projects">
           <h3>All Projects</h3>
           <div class="all-projects__button">
-            <button class="all-projects__sort-btn all-projects__sort-btn--active sort-btn__newest">Newest</button>
-            <button class="all-projects__sort-btn sort-btn__oldest">Oldest</button>
+            <div>
+              <h4>Sort</h4>
+              <div class="sort-btns">
+                <button class="all-projects__sort-btn all-projects__sort-btn--active sort-btn__newest">Newest</button>
+                <button class="all-projects__sort-btn sort-btn__oldest">Oldest</button>
+              </div>
+            </div>
+            <div>
+              <h4>Filter</h4>
+              <div class="project-types">
+                <div class="javascript-projects">
+                  <select class="filter-js">
+                    <option class="filter__option" value="all" selected>JavaScript</option>
+                    <option class="filter__option" value="vanilla">Vanilla</option>
+                    <option class="filter__option" value="react">React</option>
+                  </select>
+                </div>
+                <div class="css-projects">
+                  <select class="filter-css">
+                    <option class="filter__option" value="all" selected>CSS</option>
+                    <option class="filter__option" value="vanilla">Vanilla</option>
+                    <option class="filter__option" value="scss">Scss</option>
+                    <option class="filter__option" value="bootstrap">Bootstrap</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="all-projects__wrapper"></div>
         </div>
