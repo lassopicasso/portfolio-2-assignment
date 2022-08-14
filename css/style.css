@@ -806,5 +806,20 @@ select {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .all-projects__wrapper .project a {
+    background-color: rgba(112, 111, 111, 0.6);
+  }
+  .all-projects__wrapper .project a .project__text,
+  .all-projects__wrapper .project a .project__date {
+    opacity: 1;
+    color: #ff9100 !important;
+  }
+  .all-projects__wrapper .project a .project__text .project__title,
+  .all-projects__wrapper .project a .project__text .project__date,
+  .all-projects__wrapper .project a .project__date .project__title,
+  .all-projects__wrapper .project a .project__date .project__date {
+    -webkit-transform: scale(1.1) !important;
+            transform: scale(1.1) !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

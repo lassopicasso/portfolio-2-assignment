@@ -109,20 +109,6 @@ function sortProjects() {
   createProjects(filteredProjects);
 }
 
-// function sortProjects(btn) {
-//   let sortedProjects;
-//   if (btn.classList.contains("sort-btn__newest")) {
-//     sortedProjects = projectsArray.sort(function (a, b) {
-//       return new Date(b.date) - new Date(a.date);
-//     });
-//   } else {
-//     sortedProjects = projectsArray.sort(function (a, b) {
-//       return new Date(a.date) - new Date(b.date);
-//     });
-//   }
-//   createProjects(sortedProjects);
-// }
-
 function createProjects(projects) {
   const projectsContainer = document.querySelector(".all-projects__wrapper");
   projectsContainer.innerHTML = "";

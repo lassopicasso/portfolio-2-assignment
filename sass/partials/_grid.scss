@@ -78,9 +78,21 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media only screen and (max-width: 500px) {
   .all-projects__wrapper {
     grid-template-columns: 1fr;
+
+    .project a {
+      background-color: rgba(getColor(background), 0.6);
+      .project__text,
+      .project__date {
+        opacity: 1;
+        color: getColor(active) !important;
+        .project__title,
+        .project__date {
+          transform: scale(1.1) !important;
+        }
+      }
+    }
   }
 }
