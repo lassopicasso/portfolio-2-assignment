@@ -91,7 +91,6 @@ function sortProjects() {
   let sortedProjects;
   btns.forEach((btn) => {
     if (btn.classList.contains("all-projects__sort-btn--active")) {
-      console.log(btn);
       if (btn.classList.contains("sort-btn__newest")) {
         sortedProjects = projectsArray.sort(function (a, b) {
           return new Date(b.date) - new Date(a.date);
@@ -107,7 +106,6 @@ function sortProjects() {
   let filteredProjects = sortedProjects.filter((project) => {
     return (project.css.toLowerCase() === filteredCSS || filteredCSS === "all") && (project.javascript.toLowerCase() === filteredJS || filteredJS === "all");
   });
-  console.log(filteredProjects);
   createProjects(filteredProjects);
 }
 
