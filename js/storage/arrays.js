@@ -47,7 +47,7 @@ export const featuredArray = [
 
 export const projectsArray = [
   {
-    title: "Weather Forecast",
+    title: "Weatherish",
     theme: "Weather service",
     date: "2022, 07, 30",
     image: "../../images/weatherforecast.jpg",
