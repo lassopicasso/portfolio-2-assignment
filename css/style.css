@@ -420,7 +420,8 @@ select:hover {
 }
 
 select {
-  background: grey;
+  background: #575757;
+  color: white;
 }
 
 .project-types,
