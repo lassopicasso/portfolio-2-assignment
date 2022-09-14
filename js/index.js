@@ -112,6 +112,13 @@ function sortProjects() {
 function createProjects(projects) {
   const projectsContainer = document.querySelector(".all-projects__wrapper");
   projectsContainer.innerHTML = "";
+  console.log(projects);
+  console.log(typeof projects);
+  console.log(projects.length);
+  if (projects.length === 0) {
+    console.log("heyhey ");
+    projectsContainer.innerHTML = "<div>Sorry, no projects here atm. :)</div>";
+  }
   projects.forEach((project) => {
     displayProjects(projectsContainer, project);
   });
