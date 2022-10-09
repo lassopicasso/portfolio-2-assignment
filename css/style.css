@@ -364,6 +364,7 @@ footer div:nth-child(1) {
   height: 23px;
   border-radius: 5px;
   font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
   color: white;
   -webkit-transition: 0.5s;
   transition: 0.5s;
