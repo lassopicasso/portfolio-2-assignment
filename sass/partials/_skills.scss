@@ -4,6 +4,7 @@
   @extend %background;
   padding: 10px 20px;
   @extend %section-hide;
+  transition: 0.8s;
   &:hover {
     @extend %background-hover;
   }

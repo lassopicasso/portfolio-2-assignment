@@ -1,11 +1,14 @@
 %background {
   border-radius: 10px;
   background-color: rgba(getColor(background), 0.7);
-  transition: 0.3s;
+  transition: 0.8s;
   box-shadow: 0px 6px 6px rgba(getColor(background), 0.4);
 }
 %background-hover {
-  background-color: rgba(getColor(background), 0.4);
+  // transition: rgba(112, 111, 111, 0.8) 0.5s;
+  background-color: rgba(112, 111, 111, 0.9);
+
+  // background-color: rgba(getColor(background), 0.4);
 }
 
 %textbox-small {

@@ -113,15 +113,15 @@ section:not(#contact) {
 .contact__textbox, .about__wrapper, #skills, .featured__description {
   border-radius: 10px;
   background-color: rgba(112, 111, 111, 0.7);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
   -webkit-box-shadow: 0px 6px 6px rgba(112, 111, 111, 0.4);
           box-shadow: 0px 6px 6px rgba(112, 111, 111, 0.4);
 }
 
 .social-media:hover, .welcome__typewriter:hover,
 .contact__textbox:hover, .about__wrapper:hover, #skills:hover, .featured__description:hover {
-  background-color: rgba(112, 111, 111, 0.4);
+  background-color: rgba(112, 111, 111, 0.9);
 }
 
 .welcome__typewriter,
@@ -525,6 +525,8 @@ select {
   max-width: 600px;
   margin: auto;
   padding: 10px 20px;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
 }
 
 .skills {
