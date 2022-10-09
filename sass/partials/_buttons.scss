@@ -9,11 +9,13 @@
   border-radius: 5px;
   font-family: $font-secondary;
   color: getColor(main);
-  transition: 0.3s;
-  box-shadow: 0px 6px 6px rgba(#bd2c00, 0.4);
+  transition: 0.5s;
+  box-shadow: 0px 0px 0px 20px rgba(0, 0, 0, 0.2);
   &:hover {
     background: getColor(button-hover);
-    box-shadow: none;
+    box-shadow: 0px 0px 0px 3px rgba(#bd2c00, 0.6);
+    // -webkit-box-shadow: 0 0 10px rgba(#bd2c00, 0.2);
+    // box-shadow: 0px 6px 6px rgba(getColor(button-hover), 0.4);
   }
 }
 
