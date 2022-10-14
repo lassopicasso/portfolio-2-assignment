@@ -54,6 +54,15 @@
   }
 }
 
+.featured__tools {
+  display: flex;
+  justify-content: space-between;
+}
+.featured__links {
+  display: flex;
+  gap: 20px;
+}
+
 @media only screen and (max-width: 800px) {
   #projects {
     max-width: 100%;
@@ -70,5 +79,10 @@
     max-width: 100%;
     margin: 0;
     border-radius: 0px 0px 10px 10px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .featured__tools {
+    flex-direction: column-reverse;
   }
 }

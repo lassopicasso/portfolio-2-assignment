@@ -21,9 +21,19 @@ export function displayFeatured(featuredContainer, project) {
                                           <div class="featured__image featured__image-${project.id}"><a href="${project.url}"></a></div>
                                         </div>
                                         <div class="featured__description">
-                                          <h3> ${project.title} </h3>
-                                          <p> ${project.text} </p>
-                                        </div>
+                                          <div>
+                                            <h3> ${project.title} </h3>
+                                            <p> ${project.text} </p>
+                                          </div>
+                                          <div class="featured__tools">
+                                            <div class="featured__links">
+                                              <a href="${project.url}">Website</a>
+                                              <a href="${project.github}">Github</a>
+                                            </div>
+                                            <div>
+                                              Built with ${project.javascript} and ${project.css}
+                                            </div>
+                                          </div>
                                       </div>
                                       `;
   document.querySelector(`.featured__image-${project.id}`).style.backgroundImage = `url("${project.image}")`;
@@ -32,19 +42,39 @@ export function displayFeatured(featuredContainer, project) {
 export function displayProjects(projectsContainer, project) {
   let dateFormat = { day: "numeric", month: "numeric", year: "numeric" };
   let date = new Date(project.date).toLocaleDateString("no-NO", dateFormat);
+  // projectsContainer.innerHTML += `
+  //                             <div class="project" style="background-image: url('${project.image}')">
+  //                               <a href="${project.url}">
+  //                                 <div class="project__text">
+  //                                   <span class="project__title">${project.title}</span>
+  //                                   <span class="project__date">${date}</span>
+
+  //                                   <div class="project__text-attributes">
+  //                                     <div class="project__attributes">JS: ${project.javascript}</div>
+  //                                     <div class="project__attributes">CSS: ${project.css}</div>
+  //                                   </div>
+  //                                 </div>
+  //                               </a>
+  //                             </div>
+  //                             `;
+
   projectsContainer.innerHTML += `
-                              <div class="project" style="background-image: url('${project.image}')">
-                                <a href="${project.url}">
+  
+                                <div class="project" style="background-image: url('${project.image}')">
+                                  <a href="${project.url}"></a>
                                   <div class="project__text">
-                                    <span class="project__title">${project.title}</span>
-                                    <span class="project__date">${date}</span>
-                                  
-                                    <div class="project__text-attributes">
-                                      <div class="project__attributes">JS: ${project.javascript}</div>
-                                      <div class="project__attributes">CSS: ${project.css}</div>
+                                    <div class="project__text--header">  
+                                      <h3>${project.title}</h3>
+                                      <span class="project__date">${date}</span>
                                     </div>
+                                    <div>
+                                      JS: ${project.javascript} - CSS: ${project.css}
+                                    </div>
+                                    <div>
+                                      <a href="${project.url}">Website</a> <a href="${project.github}">Github</a>
+                                    <div>
                                   </div>
-                                </a>
-                              </div>
+                                </div>
+             
                               `;
 }
