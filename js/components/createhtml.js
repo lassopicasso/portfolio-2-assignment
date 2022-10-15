@@ -60,8 +60,8 @@ export function displayProjects(projectsContainer, project) {
 
   projectsContainer.innerHTML += `
   
-                                <div class="project" style="background-image: url('${project.image}')">
-                                  <a href="${project.url}"></a>
+                                <div class="project">
+                                  <a class="project__link" href="${project.url}" style="background-image: url('${project.image}')"></a>
                                   <div class="project__text">
                                     <div class="project__text--header">  
                                       <h3>${project.title}</h3>
