@@ -42,21 +42,6 @@ export function displayFeatured(featuredContainer, project) {
 export function displayProjects(projectsContainer, project) {
   let dateFormat = { day: "numeric", month: "numeric", year: "numeric" };
   let date = new Date(project.date).toLocaleDateString("no-NO", dateFormat);
-  // projectsContainer.innerHTML += `
-  //                             <div class="project" style="background-image: url('${project.image}')">
-  //                               <a href="${project.url}">
-  //                                 <div class="project__text">
-  //                                   <span class="project__title">${project.title}</span>
-  //                                   <span class="project__date">${date}</span>
-
-  //                                   <div class="project__text-attributes">
-  //                                     <div class="project__attributes">JS: ${project.javascript}</div>
-  //                                     <div class="project__attributes">CSS: ${project.css}</div>
-  //                                   </div>
-  //                                 </div>
-  //                               </a>
-  //                             </div>
-  //                             `;
 
   projectsContainer.innerHTML += `
   
