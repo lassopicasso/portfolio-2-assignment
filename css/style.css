@@ -781,6 +781,12 @@ select {
   border-radius: 0 0 10px 10px;
   padding: 10px;
   background-color: rgba(112, 111, 111, 0.8);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.all-projects__wrapper .project__text:hover {
+  background-color: rgba(112, 111, 111, 0.9);
 }
 
 .all-projects__wrapper .project__text div {

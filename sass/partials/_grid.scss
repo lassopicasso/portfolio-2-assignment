@@ -35,7 +35,7 @@
       background-color: rgba(getColor(background), 0.8);
       transition: 1s;
       &:hover {
-        background-color: rgba(getColor(background), 1);
+        background-color: rgba(getColor(background), 0.9);
       }
       div {
         margin-bottom: 5px;
